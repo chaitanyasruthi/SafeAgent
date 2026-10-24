@@ -1,0 +1,65 @@
+{
+  "status": "incomplete",
+  "required_fresh_runs": 20,
+  "completed_fresh_runs": 0,
+  "runs": [
+    {
+      "sandbox_name": "sbx-22e9570e7645",
+      "fresh": false,
+      "success": false,
+      "wall_clock_s": 3.739,
+      "boot_to_ready_s": null,
+      "cost_usd": null,
+      "error": "Celesto execution error: CloudAPIError",
+      "measurement_note": "Measured local API request duration; not a verified fresh Celesto sandbox lifecycle measurement."
+    },
+    {
+      "sandbox_name": "sbx-86a423d826e7",
+      "fresh": false,
+      "success": false,
+      "wall_clock_s": 3.737,
+      "boot_to_ready_s": null,
+      "cost_usd": null,
+      "error": "Celesto execution error: CloudAPIError",
+      "measurement_note": "Measured local API request duration; not a verified fresh Celesto sandbox lifecycle measurement."
+    },
+    {
+      "sandbox_name": "sbx-b19e4678f29d",
+      "fresh": false,
+      "success": false,
+      "wall_clock_s": 3.796,
+      "boot_to_ready_s": null,
+      "cost_usd": null,
+      "error": "Celesto execution error: CloudAPIError",
+      "measurement_note": "Measured local API request duration; not a verified fresh Celesto sandbox lifecycle measurement."
+    },
+    {
+      "sandbox_name": "sbx-2b85dbbcde3d",
+      "fresh": false,
+      "success": false,
+      "wall_clock_s": 3.851,
+      "boot_to_ready_s": null,
+      "cost_usd": null,
+      "error": "Celesto execution error: CloudAPIError",
+      "measurement_note": "Measured local API request duration; not a verified fresh Celesto sandbox lifecycle measurement."
+    },
+    {
+      "sandbox_name": "sbx-1e49ff63f3a8",
+      "fresh": false,
+      "success": false,
+      "wall_clock_s": 4.028,
+      "boot_to_ready_s": null,
+      "cost_usd": null,
+      "error": "Celesto execution error: CloudAPIError",
+      "measurement_note": "Measured local API request duration; not a verified fresh Celesto sandbox lifecycle measurement."
+    }
+  ],
+  "run_count": 5,
+  "success_rate": 0.0,
+  "median_wall_clock_s": 3.796,
+  "p90_wall_clock_s": 4.028,
+  "median_boot_to_ready_s": null,
+  "total_cost_usd": null,
+  "postmortem_path": "reports/postmortem.md",
+  "message": "These records measure local API requests that failed with Celesto CloudAPIError. They do not count as fresh sandbox runs. Boot-to-ready times and cloud costs are unavailable. The required 20-run fresh-sandbox reliability benchmark remains incomplete."
+}

@@ -1,0 +1,14 @@
+{
+  "capabilities": [
+    {
+      "id": "safety_hooks",
+      "why": "SafeAgent validates each requested command before execution, applies deny rules to destructive commands and network-related tools, rejects commands that violate policy, and records allow or block decisions in the audit log. This capability is implemented in the local API and safety service; it does not prove guest-level containment.",
+      "evidence_path": "backend/app/services/safety.py"
+    },
+    {
+      "id": "persistence",
+      "why": "SafeAgent persists execution attempts in its database before contacting Celesto and subsequently stores execution state, timing, cleanup status, error details, and command output summaries. This supports tracking attempts and their outcomes, although successful cloud execution is not yet verified.",
+      "evidence_path": "backend/app/api/runs.py"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{"ts": "2026-10-22T14:11:41.508038+00:00", "sandbox_name": "sbx-auditallow20261022", "command": "echo SafeAgent-audit-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:12:26.688480+00:00", "sandbox_name": "sbx-auditblock20261022", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:15:00.988091+00:00", "sandbox_name": "sbx-namecheck20261022", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:18:38.458393+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:18:38.502842+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:30:02.953645+00:00", "sandbox_name": "sbx-auditverify20261022", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:38:47.004711+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T14:38:47.029970+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:15:16.941542+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:15:16.987604+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:30:29.342395+00:00", "sandbox_name": "sbx-1e49ff63f3a8", "command": "echo SafeAgent-concurrency-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:30:29.346955+00:00", "sandbox_name": "sbx-2b85dbbcde3d", "command": "echo SafeAgent-concurrency-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:30:29.347361+00:00", "sandbox_name": "sbx-22e9570e7645", "command": "echo SafeAgent-concurrency-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:30:29.341377+00:00", "sandbox_name": "sbx-86a423d826e7", "command": "echo SafeAgent-concurrency-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:30:29.348982+00:00", "sandbox_name": "sbx-b19e4678f29d", "command": "echo SafeAgent-concurrency-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:44:02.424213+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:44:02.473814+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T15:47:16.304534+00:00", "sandbox_name": "sbx-7612d75c7bbd", "command": "echo SafeAgent-diagnostic-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T16:10:37.616046+00:00", "sandbox_name": "sbx-dca492a6f20d", "command": "echo SafeAgent-diagnostic-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-22T17:18:47.789174+00:00", "sandbox_name": "sbx-celesto001", "command": "echo hello-from-safeagent", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T14:19:22.106868+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T14:19:22.142732+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T14:22:44.640677+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T14:22:44.672442+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T14:33:07.404300+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T14:33:07.427050+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T15:08:20.682629+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T15:08:20.774858+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T15:18:00.910261+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T15:18:00.951689+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T15:54:35.755622+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-23T15:54:35.778441+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T08:33:27.817144+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T08:33:27.890186+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T08:43:29.850589+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T08:43:29.875852+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T09:24:01.798596+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T09:24:01.824919+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T09:39:52.599820+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T09:39:52.670806+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T09:46:54.357239+00:00", "sandbox_name": "sbx-unsafe1234", "command": "rm -rf /", "decision": "block", "execution_target": "celesto_sandbox"}
+{"ts": "2026-10-24T09:46:54.383285+00:00", "sandbox_name": "sbx-mock2026102201", "command": "echo SafeAgent-test", "decision": "allow", "execution_target": "celesto_sandbox"}

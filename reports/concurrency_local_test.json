@@ -1,0 +1,49 @@
+{
+  "test_type": "local_api_concurrency",
+  "api_url": "http://localhost:8081/api/runs/execute",
+  "required_concurrent_jobs": 5,
+  "completed_jobs": 5,
+  "jobs": [
+    {
+      "sandbox_name": "sbx-22e9570e7645",
+      "started_at": "2026-10-22T15:30:29.100375+00:00",
+      "success": false,
+      "http_status": 201,
+      "wall_clock_s": 3.739,
+      "error": "Celesto execution error: CloudAPIError"
+    },
+    {
+      "sandbox_name": "sbx-86a423d826e7",
+      "started_at": "2026-10-22T15:30:29.103507+00:00",
+      "success": false,
+      "http_status": 201,
+      "wall_clock_s": 3.737,
+      "error": "Celesto execution error: CloudAPIError"
+    },
+    {
+      "sandbox_name": "sbx-b19e4678f29d",
+      "started_at": "2026-10-22T15:30:29.099078+00:00",
+      "success": false,
+      "http_status": 201,
+      "wall_clock_s": 3.796,
+      "error": "Celesto execution error: CloudAPIError"
+    },
+    {
+      "sandbox_name": "sbx-2b85dbbcde3d",
+      "started_at": "2026-10-22T15:30:29.102198+00:00",
+      "success": false,
+      "http_status": 201,
+      "wall_clock_s": 3.851,
+      "error": "Celesto execution error: CloudAPIError"
+    },
+    {
+      "sandbox_name": "sbx-1e49ff63f3a8",
+      "started_at": "2026-10-22T15:30:29.096191+00:00",
+      "success": false,
+      "http_status": 201,
+      "wall_clock_s": 4.028,
+      "error": "Celesto execution error: CloudAPIError"
+    }
+  ],
+  "breakage_notes": "This test sends five concurrent requests to the SafeAgent API. It measures API behavior, not proof that five Celesto cloud sandboxes ran concurrently. Review each job's result and error."
+}

@@ -1,0 +1,11 @@
+{
+  "cleanup_on_success": true,
+  "cleanup_on_failure": true,
+  "cleanup_on_interrupt": true,
+  "sandbox_names": [
+    "sbx-auditallow20261022",
+    "sbx-auditblock20261022",
+    "sbx-namecheck20261022"
+  ],
+  "cleanup_note": "The runner requests cleanup by calling the Celesto context manager exit method after successful context entry, including on execution failure and interruption. Actual provider-side sandbox deletion has not been independently verified. Requests that fail before context entry do not establish that a sandbox was created or deleted."
+}

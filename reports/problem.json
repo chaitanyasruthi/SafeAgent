@@ -1,0 +1,6 @@
+{
+  "who": "Developers building AI agents need a controlled environment to execute agent-requested commands without exposing their host machines to unsafe operations.",
+  "agent_work": "SafeAgent accepts a command request, validates it against a safety policy, records the allow or block decision in an audit log, and routes approved commands to a Celesto sandbox. The API records execution outcomes and cleanup status.",
+  "proof_output": "The local API returned HTTP 400 for the destructive command rm -rf / and wrote a block decision to logs/commands.jsonl. An allowed command was also audited, but its Celesto execution failed with CloudAPIError.",
+  "idea_source": "original"
+}

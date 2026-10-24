@@ -1,0 +1,45 @@
+services:
+  ledger:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ledger
+      POSTGRES_PASSWORD: ledger
+      POSTGRES_DB: ledger
+    volumes:
+      - ./seeds:/docker-entrypoint-initdb.d:ro
+      - ledger_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U ledger -d ledger"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://ledger:ledger@ledger:5432/ledger
+      API_PORT: "8080"
+      COMMAND_LOG_PATH: /app/logs/commands.jsonl
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./reports:/app/reports:ro
+      - ./logs:/app/logs
+    depends_on:
+      ledger:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+volumes:
+  ledger_data:

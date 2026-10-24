@@ -1,0 +1,13 @@
+SafeAgent safety-policy evidence
+
+Source: backend/app/services/safety.py
+Test suite: backend/tests/ (verify actual test filenames before submission)
+
+Verified behavior:
+- The safety policy validates requested commands before execution.
+- Destructive command `rm -rf /` was rejected by the API.
+- The rejection was recorded in logs/commands.jsonl.
+- The blocked command was not passed to the Celesto execution function.
+
+Limitation:
+This evidence proves local/API safety-policy behavior only. It does not prove guest-level isolation or cloud sandbox containment.

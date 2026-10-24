@@ -1,0 +1,7 @@
+{
+  "failed_step": 7,
+  "total_steps": 10,
+  "policy": "pause",
+  "rationale": "When step 7 fails, SafeAgent preserves the six completed steps and records step 7 as the next step. The default local recovery behavior is pause: automatic retry is disallowed, and investigation is required before resuming. If a failure is explicitly marked retryable, the function returns retry_pending for the failed step only, without repeating completed steps. Unit tests verify pause behavior, retryable behavior, and rejection of an invalid failed step. This policy is implemented and tested as a local deterministic function. Successful recovery inside a fresh Celesto cloud sandbox has not been verified because cloud execution has been failing with CloudAPIError.",
+  "trace_path": "reports/failure_trace.jsonl"
+}

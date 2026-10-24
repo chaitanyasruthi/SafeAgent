@@ -1,0 +1,102 @@
+import re
+from datetime import datetime
+from typing import Optional
+from pydantic import BaseModel, ConfigDict, field_validator
+
+SANDBOX_RE = re.compile(r"^sbx-[a-z0-9]{8,}$")
+STATES = {"created", "ready", "running", "succeeded", "failed", "deleted"}
+TARGET = "celesto_sandbox"
+
+
+class RunCreate(BaseModel):
+    run_id: str
+    sandbox_name: str
+    problem_id: str
+    state: str
+    execution_target: str
+    task_description: Optional[str] = None
+
+    @field_validator("run_id", "problem_id")
+    @classmethod
+    def non_empty(cls, v: str):
+        if not v or not v.strip() or len(v) > 64:
+            raise ValueError("must be 1-64 non-blank characters")
+        return v
+
+    @field_validator("sandbox_name")
+    @classmethod
+    def valid_name(cls, v: str):
+        if not SANDBOX_RE.match(v):
+            raise ValueError("sandbox_name must match sbx- plus 8+ lowercase letters/digits")
+        return v
+
+    @field_validator("state")
+    @classmethod
+    def valid_state(cls, v: str):
+        if v not in STATES:
+            raise ValueError(f"state must be one of {sorted(STATES)}")
+        return v
+
+    @field_validator("execution_target")
+    @classmethod
+    def valid_target(cls, v: str):
+        if v != TARGET:
+            raise ValueError("execution_target must be celesto_sandbox")
+        return v
+
+
+class RunOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    run_id: str
+    sandbox_name: str
+    problem_id: str
+    state: str
+    execution_target: str
+    task_description: Optional[str] = None
+    created_at: Optional[datetime] = None
+    started_at: Optional[datetime] = None
+    ended_at: Optional[datetime] = None
+    wall_clock_s: Optional[float] = None
+    boot_to_ready_s: Optional[float] = None
+    cost_usd: Optional[float] = None
+    result_summary: Optional[str] = None
+    error_details: Optional[str] = None
+    cleanup_status: Optional[str] = None
+
+
+class ExecuteRequest(BaseModel):
+    run_id: str
+    sandbox_name: str
+    problem_id: str
+    command: str
+    timeout: int = 30
+
+    @field_validator("run_id", "problem_id")
+    @classmethod
+    def execution_non_empty(cls, v: str):
+        if not v or not v.strip() or len(v) > 64:
+            raise ValueError("must be 1-64 non-blank characters")
+        return v
+
+    @field_validator("sandbox_name")
+    @classmethod
+    def execution_valid_name(cls, v: str):
+        if not SANDBOX_RE.match(v):
+            raise ValueError(
+                "sandbox_name must match sbx- plus 8+ lowercase letters/digits"
+            )
+        return v
+
+    @field_validator("command")
+    @classmethod
+    def command_not_empty(cls, v: str):
+        if not v or not v.strip():
+            raise ValueError("command must not be empty")
+        return v
+
+    @field_validator("timeout")
+    @classmethod
+    def execution_valid_timeout(cls, v: int):
+        if isinstance(v, bool) or not 1 <= v <= 120:
+            raise ValueError("timeout must be between 1 and 120 seconds")
+        return v

@@ -1,0 +1,9 @@
+SafeAgent containment test
+Date: 2026-10-22
+
+Attack: destructive_command
+Command: rm -rf /
+Result: Blocked by SafeAgent safety policy before sandbox execution.
+API response: Blocked by safety policy: matches deny rule 'destructive_rm'.
+Audit evidence: logs/commands.jsonl contains a block decision for sandbox_name sbx-auditverify20261022.
+Host impact: The API rejected the command before invoking the Celesto execution function. The command was not executed on the host.

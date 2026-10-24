@@ -1,0 +1,40 @@
+# SafeAgent: Secure AI Agent with Sandbox Isolation and Failure Recovery
+
+> **Status: work in progress.** Sections marked TODO are filled only after the matching phase is actually run and verified. No result below is claimed until it has been measured.
+
+## Problem statement
+TODO (Phase 7): who has the problem, what the agent does on its Celesto computer, what output proves it worked.
+
+## How I used Celesto
+TODO (Phase 3-4): capabilities used, why, and evidence paths. Not claimed until tested.
+
+## Eval report
+TODO (Phase 7): 20+ fresh-sandbox results and postmortem. No numbers yet.
+
+## Containment test
+TODO (Phase 4): attack, outcome, evidence.
+
+## State and failure design
+TODO (Phase 5): policy for step 7 of 10 failing, and why.
+
+## Setup
+```bash
+cp .env.example .env        # then fill in real values (never commit .env)
+docker compose up --build   # starts api (8080) and ledger (Postgres)
+curl http://localhost:8080/health      # {"status":"ok"}
+curl http://localhost:8080/api/runs    # includes sbx-seeddemo1
+```
+Backend tests: `cd backend && pip install -r requirements.txt && pytest tests`
+Report validation (fails until real reports exist): `pip install pytest && pytest tests/test_reports.py`
+
+## Architecture
+Trusted control plane (FastAPI + Postgres via Docker Compose) -> Celesto SDK -> untrusted Celesto sandboxes. Diagram TODO.
+
+## Technology stack
+FastAPI, SQLAlchemy, PostgreSQL, Docker Compose, Celesto SDK (Cloud), React/Vite/Tailwind/Recharts (planned).
+
+## Security limitations
+TODO after Phase 4.
+
+## AI assistants used
+Claude (Anthropic) assisted with code and documentation.
