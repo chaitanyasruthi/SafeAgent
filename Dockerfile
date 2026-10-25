@@ -11,6 +11,7 @@ COPY backend/requirements.txt /app/requirements.txt
 
 RUN pip install --no-cache-dir --default-timeout=180 --retries=10 -r requirements.txt
 COPY backend/app /app/app
+COPY reports /app/reports
 COPY backend/tests /app/tests
 
 ENV PYTHONUNBUFFERED=1

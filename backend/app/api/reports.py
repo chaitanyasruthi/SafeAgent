@@ -3,7 +3,7 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 
 router = APIRouter(prefix="/api")
-REPORTS = Path(__file__).resolve().parents[2] / "reports"
+REPORTS = Path("/app/reports")
 ALLOWED = {"problem", "capabilities", "lifecycle", "reliability", "containment",
            "failure_policy", "concurrency"}
 
