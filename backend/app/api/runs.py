@@ -3,6 +3,7 @@ import time
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
+from app.auth import require_api_token
 from sqlalchemy import select
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from sqlalchemy.orm import Session
@@ -14,7 +15,10 @@ from app.services.celesto_runner import execute_in_sandbox
 from app.services.safety import validate_command
 from app.services.audit import log_command
 
-router = APIRouter(prefix="/api")
+router = APIRouter(
+    prefix="/api",
+    dependencies=[Depends(require_api_token)],
+)
 
 
 @router.get("/runs", response_model=list[RunOut])

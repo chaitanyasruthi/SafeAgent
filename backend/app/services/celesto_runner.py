@@ -78,6 +78,7 @@ def execute_in_sandbox(command: str, timeout: int = 30) -> dict:
             "recovery_action",
             "side_effects",
             "running_limit",
+            "validation_errors",
         ):
             value = getattr(exc, field, None)
             if value is not None:

@@ -1,8 +1,19 @@
+import os
 from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
 from app.main import app
+
+
+TOKEN = os.environ.get(
+    "SAFEAGENT_API_TOKEN",
+    "safeagent-local-test-token",
+)
+
+HEADERS = {
+    "Authorization": f"Bearer {TOKEN}",
+}
 
 client = TestClient(app)
 
@@ -17,6 +28,7 @@ def test_unsafe_command_is_rejected():
             "command": "rm -rf /",
             "timeout": 10,
         },
+        headers=HEADERS,
     )
 
     assert response.status_code == 400
@@ -44,9 +56,11 @@ def test_allowed_command_saves_successful_run(mock_execute):
             "command": "echo SafeAgent-test",
             "timeout": 10,
         },
+        headers=HEADERS,
     )
 
     assert response.status_code == 201
     assert response.json()["state"] == "succeeded"
     assert response.json()["cleanup_status"] == "deleted"
+
     mock_execute.assert_called_once()
